@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}"/>
+    <title>Document</title>
+</head>
+<body>
+    <div class="telaCheia">
+        <div class="imagemEsquerdo">
+            <img src="{% static 'images/11806932_4834055.svg' %}"/>
+        </div>
+        <div class="ladoDireito">
+            <div class="content_dir">
+                <div class="parteCima">
+                    <p class="PrimeiroTexto">PRATIQUE</p>
+                    <div class="oBem">
+                        <p class="SegundoTexto">O</p>
+                        <p class="TerceiroTexto">BEM</p>
+                    </div>
+
+                </div>
+                <div class="pg-quarto">
+                    <p class="QuartoTexto">FAÇA SUA DOAÇÃO PARA QUEM MAIS PRECISA </p>
+                </div>
+                <div class="parteBaixo">
+                    <a href="{% url 'registerdoacao' %}" class="doar">DOAR AGORA</a>
+                    <a href="{% url 'doacoes' %}" class="doar">VER DOAÇÕES</a>
+                    <a href="{% url 'creditos' %}" class="doar">CRÉDITOS</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

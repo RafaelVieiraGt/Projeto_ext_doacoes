@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doações</title>
+    <link rel="stylesheet" href="{% static 'css/doacoes.css' %}">
+</head>
+<body>
+    <header>
+        <h1>DOAÇÕES</h1>
+        <div class="filter-home">
+            <form action="{% url 'filter_prod' %}" method="get" class="filter">
+                <select name="categoria">
+                    <option value="Tudo">Tudo</option>
+                    <option value="Eletronicos">Eletrônicos</option>
+                    <option value="Vestuario">Vestuário</option>
+                    <option value="Moveis">Móveis</option>
+                    <option value="Brinquedos">Brinquedos</option>
+                    <option value="Eletrodomestico">Eletrodomésticos</option>
+                    <option value="Alimento">Alimento</option>
+                    <option value="Plantas">Plantas</option>
+                    <option value="Esportes">Esporte</option>
+                    <option value="Servicos">Serviços</option>
+                    <option value="Outros">Outros</option>
+                </select>
+                <button type="submit"><i class="fa-solid fa-magnifying-glass fa-xl" style="color: #ffffff;"></i></button>
+            </form>
+            <a href="{% url 'home' %}" class="btn-home"><i class="fa-solid fa-house fa-xl" style="color: #ffffff;"></i></a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container-doacoes">
+            {% for produto in produtos %}
+                <div class="doacao">
+                    <img src="{{ produto.foto.url }}" class="imagem_produto"/>
+                    <div class="doacao-info">
+                        <h1>{{ produto.produto }}</h1>
+                        <div class="doacoes">
+
+                            <div class="info-doador">
+
+                                <ul>
+                                    <li><i class="fa-solid fa-person" style="color: #cf7045;"></i><span>{{ produto.nome }}</span></li>
+                                    <li><i class="fa-solid fa-city" style="color: #cf7045;"></i> <span>{{ produto.cidade }}</span></li>
+                                    <li><i class="fa-solid fa-map-location" style="color: #cf7045;"></i><span>{{ produto.endereco }}</span></li>
+
+                                </ul>
+                            </div>
+                            <!-- <form action="{% url 'excluir_prod' produto.id%}" method="post">-->
+                                <!-- {% csrf_token %} -->
+                                 <!-- <button type="submit"> Doação concluida </button> -->
+                             <!--</form>-->
+                            <div class="info-produto">
+                                <ul>
+                                    <li><i class="fa-solid fa-phone" style="color: #cf7045;"></i> <span>{{ produto.telefone }}</span></li>
+                                    <li><i class="fa-solid fa-magnifying-glass" style="color: #cf7045;"></i><span>{{ produto.categoria }}</span></li>
+                                    <li><i class="fa-solid fa-file-lines" style="color: #cf7045;"></i><span>{{ produto.descricao }}</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+    <script src="https://kit.fontawesome.com/620651a476.js" crossorigin="anonymous"></script>
+</body>
+</html>

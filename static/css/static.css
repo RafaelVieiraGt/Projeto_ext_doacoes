@@ -1,0 +1,298 @@
+*{
+    margin: 0;
+}
+.content{
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.btn-home{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px; /* Aumente a largura do botão para acomodar a imagem */
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.icone{
+    display: inline-block;
+    width: 50px;
+    height: 40px;
+
+}
+.btn-home:hover{
+    background-color: #CF7045
+
+}
+main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: #EDE4DB;
+    justify_content: center;
+}
+.tituloH1{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+.tituloH1 h1{
+    font-family: 'Rubik One', sans-serif;
+    color: #CF7045;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 45px;
+}
+#blackFont{
+    color: #000;
+}
+.subtitSpan{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.subtitSpan span{
+    margin-top: 5px;
+    font-family: 'Roboto', sans-serif;
+    color: #CF7045;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+}
+.areaCadastro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    height: 60%;
+    margin-top: 85px;
+    margin-right: 10px;
+
+}
+.row_input{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+}
+.div-centro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.inputDoador{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+}
+.inputDoador h2{
+    font-family: 'Rubik One', sans-serif;
+    color: #CF7045;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 45px;
+    margin-bottom: 30px;
+    width: 70%;
+    text-align: center;
+
+}
+
+.inputarea{
+    padding: 10px 16px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    border: 1px solid #CF7045;
+    background: #FFF;
+    width: 100%;
+    max-width: 450px;
+    justify-content: center;
+
+}
+
+.img img{
+    width: 100%;
+    height: 90%;
+    scale: 1.12;
+}
+.inputarea label{
+    color: #000;
+    font-family: Roboto;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    transition: all .3s ease-in-out;
+    position: absolute;
+    transform: translateY(0);
+}
+.inputarea label:not(.custom-file-button) {
+    pointer-events: none;
+}
+.inputarea input{
+    border: 0;
+    /* margin-top: 8px; */
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding:10px 0;
+    margin-top:10px;
+}
+.inputarea select{
+    border: 0;
+     padding-right: 1em; /* Adiciona um espaço para acomodar o texto da label */
+    text-indent: -9999px; /* Move o texto selecionado para fora da visão */
+    background: transparent;
+}
+
+.inputarea:has(input:focus) label:not(.custom-file-button) {
+    font-size: 14px;
+    transform: translateY(-120%);
+}
+
+.input-focused .floating-label, .input-filled .floating-label {
+
+    transform: translateY(-120%);
+    font-size: 14px;
+}
+input:focus{
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+ #filebutton{
+    opacity: 0;
+
+    top: 0;
+    left: 0;
+
+    cursor: pointer;
+ }
+ .custom-file-button {
+    background-color: #fff;
+    color: #000;
+    padding: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+  }
+  #foto input{
+     opacity: 0;
+
+    top: 0;
+    left: 0;
+
+    cursor: pointer;
+  }
+  .custom-file-button:hover{
+    background-color: #CF7045;
+    color: #fff;
+    padding: 10px;
+  }
+  .img {
+    width: 30%;
+    scale: 1.35;
+    margin-left: 10px;
+  }
+  .btn_enviar{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  .btn_enviar button{
+    cursor: pointer;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    font-family: 'Rubik One', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    margin: 30px 0;
+    width: 23%;
+    border: 0;
+    border-radius: 8px;
+    background: #CF7045;
+    color: #FFF;
+    padding: 10px 30px;
+    transition: all 0.2s
+  }
+  .btn_enviar button:hover{
+    color: #CF7045;
+    background: #FFF;
+  }
+
+  @media (max-width: 500px){
+    main{
+        height: auto;
+    }
+    .content{
+        gap: 40px;
+    }
+    .tituloH1{
+        flex-direction: column;
+        justify_content: center;
+    }
+    .tituloH1 h1{
+        text-align: center;
+        font-size: 35px;
+    }
+    .subtitSpan span{
+        text-align: center;
+        font-size: 18px;
+    }
+    .areaCadastro{
+        margin-top: 0;
+    }
+    .row_input{
+        flex-direction: column;
+        gap: 30px;
+    }
+    .inputDoador{
+        width: 100%;
+    }
+    .inputDoador h2{
+        font-size: 30px;
+        margin-bottom: 0;
+    }
+    .inputarea{
+        width:80%;
+    }
+    .inputarea label{
+        font-size: 18px
+    }
+    .img{
+        width: 100%;
+        scale: 1;
+    }
+    .btn_enviar{
+        margin-top: 0;
+    }
+    .btn_enviar button{
+        width: auto;
+    }
+    .btn-home{
+        position: absolute;
+        top: 0px;
+        right: 10px;
+    }
+    .icone{
+        width: 40px;
+        height: 35px;
+    }
+  }

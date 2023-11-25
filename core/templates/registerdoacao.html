@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Item</title>
+    <link rel="stylesheet" href="{% static 'css/static.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <div class="content">
+            <a href="{% url 'home' %}" class="btn-home">
+                <img class="icone" src="{% static 'images/image.png' %}"/>
+            </a>
+            <div class="tituloH1">
+                <h1>COMO VOCÊ PODE</h1>
+                <h1 class="blackFont"> AJUDAR HOJE?</h1>
+            </div>
+            <div class="subtitSpan">
+                <span>Preencha as informações e faça o cadastro do produto que deseja doar</span>
+            </div>
+            <div class="div-centro">
+                <form class="areaCadastro" method="post" enctype="multipart/form-data" action="{% url 'registerdoacao' %}">
+                    {% csrf_token %}
+                    <div class="row_input">
+                        <div class="inputDoador">
+                            <h2 class="blackFont">DOADOR</h2>
+
+                                <div class="inputarea">
+                                    <label  class="floating-label">Seu Nome</label>
+                                    {{ form.nome }}
+                                </div>
+
+                                 <div class="inputarea">
+                                    <label class="floating-label">Cidade</label>
+                                    {{ form.cidade }}
+                                </div>
+
+                                <div class="inputarea">
+                                    <label class="floating-label">Endereço</label>
+                                    {{ form.endereco }}
+                                </div>
+
+                                <div class="inputarea">
+                                    <label class="floating-label">Telefone</label>
+                                    {{ form.telefone }}
+                                </div>
+                        </div>
+                        <div class="img">
+                            <img width="800px" height="651px" src="{% static 'images/7732672_5299.svg' %}" alt="Familia caridosa"/>
+                        </div>
+                        <div class="inputDoador" id="inputDir">
+                            <h2 id="blackFont">PRODUTO</h2>
+
+                                <div class="inputarea">
+                                    <label class="floating-label">Produto</label>
+                                    {{ form.produto }}
+                                </div>
+
+                                 <div class="inputarea">
+                                    <label class="floating-label" id="categoria_selecionada">Categoria</label>
+                                    {{ form.categoria }}
+                                </div>
+
+                                <div class="inputarea">
+                                    <label class="floating-label" >Descrição</label>
+                                    {{ form.descricao }}
+                                </div>
+
+                                <div class="inputarea" id="foto">
+                                    {{ form.foto }}
+                                    <label for="id_foto" class="custom-file-button">Foto do Produto </label>
+                                </div>
+                        </div>
+                    </div>
+                     <div class="btn_enviar">
+                        <button type="submit">ENVIAR DADOS</button>
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+    </main>
+    <script>
+
+
+        var selectElements = document.querySelectorAll('.inputarea select');
+
+    // Itera sobre todos os elementos 'select'
+    selectElements.forEach(function(selectElement) {
+        // Quando o valor do select muda
+        selectElement.addEventListener('change', function() {
+            // Obtém o valor selecionado
+            var selectedValue = selectElement.value;
+
+            // Seleciona o elemento da label
+            var labelElement = document.getElementById('categoria_selecionada');
+
+            // Atualiza o conteúdo da label com o valor selecionado
+            labelElement.textContent = selectedValue;
+        });
+    });
+
+
+        document.getElementById('id_foto').onchange = function(){
+
+            const fileInput = document.getElementById('id_foto');
+            const customFileButton = fileInput.nextElementSibling;
+
+            if (fileInput.files.length > 0) {
+                customFileButton.textContent = fileInput.files[0].name;
+            } else {
+                customFileButton.textContent = "Selecionar Arquivo";
+            }
+        }
+
+
+        document.addEventListener("DOMContentLoaded", function(){
+            var inputFields = document.querySelectorAll("input[type='text']");
+
+            inputFields.forEach(function(inputField) {
+                var inputArea = inputField.parentElement;
+                var floatingLabel = inputArea.querySelector(".floating-label");
+
+                inputField.addEventListener("focus", function() {
+                inputArea.classList.add("input-focused");
+                });
+
+                inputField.addEventListener("blur", function() {
+                    if (inputField.value === "") {
+                        inputArea.classList.remove("input-focused", "input-filled");
+                    } else {
+                        inputArea.classList.add("input-filled");
+                    }
+                });
+            });
+
+        })
+    </script>
+</body>
+</html>

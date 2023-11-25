@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Créditos</title>
+
+    <link rel="stylesheet" href="{% static 'css/creditos.css' %}">
+</head>
+<body>
+    <div class="content">
+        <a href="{% url 'home' %}" class="btn-home">
+            <img class="icone" src="{% static 'images/image.png' %}"/>
+        </a>
+        <h1>Desenvolvedores</h1>
+        <div class="linha">
+            <div class="container">
+                <div class="imagem"><img src="{% static 'images/fotoRafa.png' %}"></div>
+                <div class="texto">Rafael Vieira</div>
+            </div>
+
+            <div class="container">
+                <div class="imagem"><img src="{% static 'images/fotoGui.jpeg' %}"></div>
+                <div class="texto">Guilherme Bertozzo</div>
+            </div>
+
+            <div class="container">
+                <div class="imagem"><img src="{% static 'images/fotoHenrique.jpeg' %}"></div>
+                <div class="texto">Henrique Canho</div>
+            </div>
+        </div>
+
+        <div class="linha">
+            <div class="container">
+                <div class="imagem"><img src="{% static 'images/fotoMarcos.jpeg' %}"></div>
+                <div class="texto">Marcos Coleone</div>
+            </div>
+
+            <div class="container">
+                <div class="imagem"><img src="{% static 'images/fotoFabricio.jpeg' %}"></div>
+                <div class="texto">Fabricio Ricci</div>
+            </div>
+
+            <div class="container">
+                <div class="imagem"><img src="{% static 'images/fotoElvio.jpeg' %}"></div>
+                <div class="texto">Professor Elvio da Silva</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <img src="{% static 'images/logoExtensão.jpg' %}" alt="logo Reitoria"/>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,183 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Roboto';
+    background-color: #EDE4DB;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+main{
+    display: flex;
+    justify-content: center;
+}
+header{
+    width: 100%;
+    height: 80px;
+    background-color: #CF7045;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+    font-family: 'Rubik One';
+    font-weight: 300;
+    font-size: 20px;
+}
+.filter{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.filter-home{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.filter select{
+    font-family: 'Roboto';
+    padding: 8px 10px;
+    border: 0;
+    border-radius: 8px;
+}
+.filter button{
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+.container-doacoes{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+.doacao{
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    height: 302px;
+    box-sizing: border-box;
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    transition: all 0.2s
+}
+.doacao:hover{
+    box-shadow:  10px 10px 30px #b3b3b3,
+             -10px -10px 30px #ffffff;
+}
+.imagem_produto{
+    height: 300px;
+   width: 40%;
+   border-radius: 15px 0 0 15px;
+   object-fit: cover;
+}
+.doacoes{
+    display: flex;
+    flex-direction: row;
+    height: 60%;
+    width: 100%;
+    justify-content: space-around;
+
+}
+.doacao-info{
+    width: 60%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content:  center;
+}
+.info-doador{
+    display: flex;
+    align-items: center;
+    max-width: 209px;
+}
+.info-doador ul{
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 35%;
+}
+.doacoes form{
+    display:flex;
+    align-items: end
+}
+.doacoes form button{
+    background: none;
+    border: 0;
+    cursor: pointer;
+    padding: 8px 10px;
+    transition: all 0.2s
+    font-family: 'Roboto';
+
+    font-size: 16px;
+    border-radius: 8px
+
+}
+.doacoes form button:hover{
+    background-color: #CF7045;
+    color: #fff;
+}
+.info-doador ul li{
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    font-family: "Roboto";
+    font-size: 16px;
+}
+.info-produto{
+    display: flex;
+    align-items: center;
+    max-width: 209px;
+}
+.info-produto ul{
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 35%;
+
+}
+.info-produto ul li{
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    font-family: "Roboto";
+    font-size: 16px;
+    max-width: 430px;
+}
+
+@media (max-width: 500px){
+    .doacao{
+        height: 600px;
+        flex-direction: column;
+        margin-bottom: 0;
+        width: 70%;
+    }
+    .imagem_produto{
+        height: 50%;
+        width: 100%;
+        border-radius: 15px 15px 0 0;
+    }
+    .doacao-info{
+        width: 100%;
+    }
+    .doacao-info h1{
+        font-size: 22px;
+    }
+    .info-doador ul li{
+        font-size: 20px;
+    }
+
+    .info-produto ul li{
+        font-size: 20px;
+    }
+}
+
