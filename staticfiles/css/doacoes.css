@@ -154,30 +154,34 @@ header{
     max-width: 430px;
 }
 
-@media (max-width: 500px){
-    .doacao{
-        height: 600px;
-        flex-direction: column;
-        margin-bottom: 0;
-        width: 70%;
-    }
-    .imagem_produto{
-        height: 50%;
-        width: 100%;
-        border-radius: 15px 15px 0 0;
-    }
-    .doacao-info{
-        width: 100%;
-    }
-    .doacao-info h1{
-        font-size: 22px;
-    }
-    .info-doador ul li{
-        font-size: 20px;
-    }
+    @media (max-width: 500px){
+        header{
+            height: 160px;
+            flex-direction: column;
+        }
+        .doacao{
+            height: 600px;
+            flex-direction: column;
+            margin-bottom: 0;
+            width: 70%;
+        }
+        .imagem_produto{
+            height: 50%;
+            width: 100%;
+            border-radius: 15px 15px 0 0;
+        }
+        .doacao-info{
+            width: 100%;
+        }
+        .doacao-info h1{
+            font-size: 22px;
+        }
+        .info-doador ul li{
+            font-size: 20px;
+        }
 
-    .info-produto ul li{
-        font-size: 20px;
+        .info-produto ul li{
+            font-size: 20px;
+        }
     }
-}
 
